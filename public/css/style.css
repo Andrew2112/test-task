@@ -1,0 +1,17 @@
+form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+label{
+    width: 100px;
+}
+.btn-form{
+    border: 1px solid #cccccc;
+    background-color: #E3E3E3;
+}
+.btn-back{
+    margin-left: -16px;
+}
+.img-action{
+    width: 25px;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h1>Наша библиотека</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Author</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.year }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>
+                            <a href="{{ path('book_show', {'id': book.id}) }}"><img class="img-action" src="{{ asset('img/eye.png') }}" alt=""></a>
+                            <a href="{{ path('book_edit', {'id': book.id}) }}"><img class="img-action" src="{{ asset('img/pencil.png') }}" alt=""></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{{ path('book_new') }}" class="btn btn-default btn-form">Добавить книгу</a>
+        </div>
+    </div>
+{% endblock %}
