@@ -3,9 +3,16 @@
 {% block title %}New Book{% endblock %}
 
 {% block body %}
-    <h1>Create new Book</h1>
+    <div class="container">
+        <div class="row">
+            <h1>Добавить книгу</h1>
+        </div>
+        <div class="row">
+            {{ include('book/_form.html.twig') }}
 
-    {{ include('book/_form.html.twig') }}
 
-    <a href="{{ path('book_index') }}">back to list</a>
+        </div>
+        <a href="{{ path('book_index') }}" class="btn btn-default btn-form btn-back">Назад к списку</a>
+    </div>
+
 {% endblock %}
